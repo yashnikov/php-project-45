@@ -13,5 +13,8 @@
             "email": "yashnikov@yashnikov.com"
         }
     ],
+    "bin": [
+        "bin/brain-games"
+    ],
     "require": {}
 }
