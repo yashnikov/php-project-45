@@ -3,3 +3,6 @@ install: # install composer
 
 brain-games: # shortcut to start brain games
 	./bin/brain-games
+
+validate: # validate composer package
+	composer validate
