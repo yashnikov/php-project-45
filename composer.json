@@ -16,5 +16,7 @@
     "bin": [
         "bin/brain-games"
     ],
-    "require": {}
+    "require-dev": {
+        "wp-cli/php-cli-tools": "^0.11.16"
+    }
 }
