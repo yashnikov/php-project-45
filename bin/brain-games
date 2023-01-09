@@ -1,4 +1,6 @@
 #!/usr/bin/env php
 <?php
 
+require_once 'src/Cli.php';
+
 echo 'Welcome to the Brain Games';
