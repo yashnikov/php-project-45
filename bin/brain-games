@@ -1,6 +1,9 @@
 #!/usr/bin/env php
-<?php
 
-require_once 'src/Cli.php';
+<?php
+require 'vendor/autoload.php';
+
+use function BrainGames\Cli\greetPerson;
 
 echo 'Welcome to the Brain Games';
+greetPerson();
