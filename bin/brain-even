@@ -9,7 +9,44 @@ use function cli\prompt;
 
 greetPerson();
 
-$number = rand(1, 100);
+$correctAnswersCount = 0;
+
+function isEven($num)
+{
+    if ($num % 2 == 0) {
+        return True;
+    }
+    return False;
+}
 
 line('Answer "yes" if the number is even, otherwise answer "no".');
-line('Question: %s.', $number);
+
+for ($x = 0; $x < 3; $x++) {
+    $number = rand(1, 100);
+    line('Question: %s.', $number);
+    $answer = prompt('Your answer');
+
+    if (isEven($number) === True) {
+        if ($answer === "yes") {
+            line('Correct!');
+            $correctAnswersCount++;
+        } else {
+            line("'no' is wrong answer ;(. Correct answer was 'yes'.");
+            break;
+        }
+    }
+    
+    if (isEven($number) === False) {
+        if ($answer === "no") {
+            line('Correct!');
+            $correctAnswersCount++;
+        } else {
+            line("'yes' is wrong answer ;(. Correct answer was 'no'.");
+            break;
+        }
+    }
+
+    if ($correctAnswersCount === 3) {
+        line('Congratulations, username');
+    } 
+}
