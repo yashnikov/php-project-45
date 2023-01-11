@@ -1,1 +1,15 @@
 #!/usr/bin/env php
+
+<?php
+require 'vendor/autoload.php';
+
+use function BrainGames\Cli\greetPerson;
+use function cli\line;
+use function cli\prompt;
+
+greetPerson();
+
+$number = rand(1, 100);
+
+line('Answer "yes" if the number is even, otherwise answer "no".');
+line('Question: %s.', $number);
