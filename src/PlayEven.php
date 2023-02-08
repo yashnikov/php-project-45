@@ -37,13 +37,14 @@ function startPlayEven()
                 break;
             }
         }
-        
+
         if (isEven($number) === false) {
             if ($answer === "no") {
                 line('Correct!');
                 $correctAnswersCount++;
             } else {
                 line("'yes' is wrong answer ;(. Correct answer was 'no'.");
+                line("Let's try again, %s!", $name);
                 break;
             }
         }

@@ -44,6 +44,7 @@ function startPlayCalc()
             $correctAnswersCount++;
         } else {
             line("%s is wrong answer ;(. Correct answer was %s.", $userVersion, $result);
+            line("Let's try again, %s!", $name);
             break;
         }
 }
