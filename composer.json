@@ -5,7 +5,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/PlayEven.php"
+            "src/PlayEven.php",
+            "src/PlayCalc.php"
         ],
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -19,7 +20,8 @@
     ],
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "require-dev": {
         "wp-cli/php-cli-tools": "^0.11.16",

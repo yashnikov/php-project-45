@@ -7,6 +7,9 @@ brain-games: # shortcut to start brain games
 brain-even:
 	./bin/brain-even
 
+brain-calc:
+	./bin/brain-calc
+
 validate: # validate composer package
 	composer validate
 
