@@ -3,3 +3,5 @@
 
 
 [asciinema](https://asciinema.org/a/P92MS59pme40BRik28jNJ6YYy)
+
+[asciinema for brain calc](https://asciinema.org/connect/b017d18e-ae8b-4de9-8684-2417d2f9b7ca)
