@@ -4,15 +4,17 @@ namespace BrainGames\PlayCalc;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\displayWelcomeScreen;
+use function BrainGames\Engine\displayWrongAnswerMessage;
+use function BrainGames\Engine\displayCorrectAnswerMessage;
+
 
 function startPlayCalc()
 {
     $operators = array("+", "-", "*");
     $correctAnswersCount = 0;
 
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    displayWelcomeScreen();
 
     for ($x = 0; $x < 3; $x++) {
         $number1 = rand(1, 10);
@@ -35,18 +37,17 @@ function startPlayCalc()
             $result = $number1 + $number2;
         }
 
-        if ($correctAnswersCount === 3) {
-            line('Congratulations, %s', $name);
-        } 
-
         if ((integer)$userVersion === (integer)$result) {
             line("Correct!");
             $correctAnswersCount++;
+            if ($correctAnswersCount === 3) {
+                displayCorrectAnswerMessage();
+            } 
         } else {
             line("%s is wrong answer ;(. Correct answer was %s.", $userVersion, $result);
-            line("Let's try again, %s!", $name);
+            displayWrongAnswerMessage();
             break;
         }
-}
+    }
 
 }

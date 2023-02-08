@@ -4,12 +4,13 @@ namespace BrainGames\PlayEven;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\displayWelcomeScreen;
+use function BrainGames\Engine\displayWrongAnswerMessage;
+use function BrainGames\Engine\displayCorrectAnswerMessage;
 
 function startPlayEven()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    displayWelcomeScreen();
 
     $correctAnswersCount = 0;
 
@@ -32,8 +33,12 @@ function startPlayEven()
             if ($answer === "yes") {
                 line('Correct!');
                 $correctAnswersCount++;
+                if ($correctAnswersCount === 3) {
+                    displayCorrectAnswerMessage();
+                }
             } else {
                 line("'no' is wrong answer ;(. Correct answer was 'yes'.");
+                displayWrongAnswerMessage();
                 break;
             }
         }
@@ -44,13 +49,10 @@ function startPlayEven()
                 $correctAnswersCount++;
             } else {
                 line("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                line("Let's try again, %s!", $name);
+                displayWrongAnswerMessage();
                 break;
             }
         }
 
-        if ($correctAnswersCount === 3) {
-            line('Congratulations, %s', $name);
-        } 
     }
 }

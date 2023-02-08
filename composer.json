@@ -5,8 +5,9 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/PlayEven.php",
-            "src/PlayCalc.php"
+            "src/Engine.php",
+            "src/Games/PlayEven.php",
+            "src/Games/PlayCalc.php"
         ],
         "psr-4": {
             "Hexlet\\Code\\": "src/"
